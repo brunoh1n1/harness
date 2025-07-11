@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  harness:
+    image: harness/harness
+    container_name: opensource
+    ports:
+      - "3000:3000"
+      - "3022:3022"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/harness:/data
+    restart: always
